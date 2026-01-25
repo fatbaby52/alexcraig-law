@@ -1,0 +1,9 @@
+# robots.txt for alexcraig.law
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://alexcraig.law/sitemap.xml
+
+# Disallow admin and private pages
+Disallow: /thank-you.html
