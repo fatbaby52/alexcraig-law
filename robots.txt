@@ -7,3 +7,4 @@ Sitemap: https://alexcraig.law/sitemap.xml
 
 # Disallow admin and private pages
 Disallow: /thank-you.html
+Disallow: /CLAUDE.md
