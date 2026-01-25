@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://alexcraig.law/</loc>
+        <lastmod>2025-01-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://alexcraig.law/practice-areas/estate-planning</loc>
+        <lastmod>2025-01-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alexcraig.law/practice-areas/immigration</loc>
+        <lastmod>2025-01-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alexcraig.law/practice-areas/criminal-defense</loc>
+        <lastmod>2025-01-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://alexcraig.law/practice-areas/personal-injury</loc>
+        <lastmod>2025-01-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
