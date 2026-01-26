@@ -1,0 +1,3 @@
+# Redirect /dugout to Diamond Dynasty game
+/dugout https://radiant-creponne-680ba5.netlify.app 301
+/dugout/* https://radiant-creponne-680ba5.netlify.app/:splat 301
