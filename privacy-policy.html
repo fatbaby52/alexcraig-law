@@ -20,14 +20,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <a href="index.html" class="logo">
-                    <img src="Alex_Craig_Logo-removebg-preview.png" alt="Alex Craig Law" class="logo-img">
+                    <img src="Alex_Craig_Logo-removebg-preview.png" alt="Alex Craig Law - Home" class="logo-img" width="150" height="50">
                 </a>
-                <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-                <ul class="nav-links">
+                <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+                <ul class="nav-links" id="nav-menu" role="navigation">
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#practice-areas">Practice Areas</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
@@ -37,6 +39,7 @@
         </div>
     </header>
 
+    <main id="main">
     <section class="page-hero">
         <div class="container">
             <h1>Privacy Policy</h1>
@@ -124,13 +127,14 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="Alex_Craig_Logo-removebg-preview.png" alt="Alex Craig Law" class="footer-logo-img">
+                        <img src="Alex_Craig_Logo-removebg-preview.png" alt="Alex Craig Law - Home" class="footer-logo-img" width="135" height="45" loading="lazy">
                     </a>
                     <p>Compassionate legal representation for California's Central Coast and Central Valley.</p>
                 </div>

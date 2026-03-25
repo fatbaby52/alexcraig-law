@@ -19,6 +19,8 @@ Static website for Alex Craig Law, a law firm serving California's Central Coast
 | DNS management | https://app.netlify.com/projects/alexcraig-law/domain-management |
 
 ## Deployment
+**IMPORTANT:** Limit deploys - user has finite Netlify build minutes across 5 projects. Batch changes and only deploy when explicitly asked.
+
 From this folder, run:
 ```bash
 netlify deploy --prod --dir=.
@@ -48,6 +50,7 @@ Google Workspace email is configured. MX records are in Netlify DNS.
 ## File Structure
 ```
 ├── index.html              # Homepage
+├── 404.html                # Custom 404 error page
 ├── practice-areas/
 │   ├── estate-planning.html
 │   ├── immigration.html
@@ -61,6 +64,19 @@ Google Workspace email is configured. MX records are in Netlify DNS.
 ├── robots.txt
 └── Various favicon/image files
 ```
+
+## Accessibility (March 2025 Audit)
+**Completed:**
+- Skip navigation link on all pages
+- ARIA expanded states on mobile menu
+- Focus trapping in mobile menu
+- :focus-visible styles for keyboard navigation
+- Reduced motion support (@prefers-reduced-motion)
+- Inline form validation (replaced alert() dialogs)
+- <main> landmark on all pages
+- Image lazy loading and explicit dimensions
+- Increased mobile touch targets (44px minimum)
+- Custom 404 page
 
 ## Netlify Configuration
 - Site ID: c4e4317e-4a36-49a3-8278-a3f774db3f37
