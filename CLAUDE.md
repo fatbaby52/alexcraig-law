@@ -41,11 +41,16 @@ Google Workspace email is configured. MX records are in Netlify DNS.
 - Google Analytics (G-Q30ECFCSV6)
 - Image optimization
 
+**Completed June 2026:**
+- FAQPage + BreadcrumbList schema on employment-law page (mirrors the visible FAQ — keep in sync when editing FAQs)
+- llms.txt (LLM-readable firm summary; employment-law focus, no client-base language per the May 2026 reframe)
+- robots.txt explicitly allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot, etc.)
+- /CLAUDE.md blocked from being served via _redirects 404 rule
+
 **Pending:**
 - [ ] Google Search Console verification and sitemap submission
 - [ ] Google Business Profile setup
-- [ ] Consider adding FAQ schema to practice area pages
-- [ ] Consider location-specific landing pages for better local SEO
+- [ ] Consider location-specific landing pages for better local SEO (Salinas, Monterey, Modesto — employment-law angle)
 
 ## File Structure
 ```
