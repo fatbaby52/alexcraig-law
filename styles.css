@@ -1252,3 +1252,59 @@ textarea[aria-invalid="true"] {
         white-space: normal;
     }
 }
+
+/* ===== Polish pass (July 2026) ===== */
+
+/* Fluid type on subpage heroes and article headings: long question-style
+   H1s/H2s were rendering at full desktop size on phones */
+.page-hero h1 {
+    font-size: clamp(1.75rem, 1.1rem + 2.6vw, 2.5rem);
+    line-height: 1.2;
+    max-width: 30ch;
+}
+
+.main-content h2 {
+    font-size: clamp(1.5rem, 1.2rem + 1.3vw, 2rem);
+}
+
+/* Section rhythm: generous space above each question heading,
+   tight coupling with the answer below it */
+.main-content > h2 {
+    margin-top: 2.75rem;
+}
+
+.main-content > h2:first-child {
+    margin-top: 0;
+}
+
+.faq-section h2 {
+    margin-top: 2.25rem;
+}
+
+.faq-section:first-of-type h2 {
+    margin-top: 0;
+}
+
+/* Comfortable reading measure (~70 characters) for article text */
+.main-content p,
+.main-content .service-list li {
+    max-width: 70ch;
+}
+
+/* Article byline gets its own line; review dates sit beneath it */
+.article-meta > span:first-child {
+    flex-basis: 100%;
+}
+
+/* Momentum scrolling for the comparison table on touch screens */
+.table-wrap {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* On article pages, content comes first on small screens; the long
+   sidebar link lists follow instead of burying the story */
+@media (max-width: 992px) {
+    .content-grid:has(.article-meta) .sidebar {
+        order: 0;
+    }
+}

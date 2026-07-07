@@ -125,7 +125,7 @@
                             </div>
                         </div>
                         <button type="button" class="btn btn-primary btn-block" id="calc-run">Calculate Estimate</button>
-                        <p class="error-message" id="calc-error" role="alert" style="display:block;"></p>
+                        <p class="error-message" id="calc-error" role="alert"></p>
                     </div>
 
                     <div class="highlight-box" id="calc-results" hidden aria-live="polite">
@@ -269,7 +269,12 @@
         runBtn.addEventListener('click', function () {
             var errEl = document.getElementById('calc-error');
             var results = document.getElementById('calc-results');
+            var fail = function (msg) {
+                errEl.textContent = msg;
+                errEl.style.display = 'block';
+            };
             errEl.textContent = '';
+            errEl.style.display = 'none';
             results.hidden = true;
 
             var price = parseFloat(document.getElementById('calc-price').value);
@@ -279,10 +284,10 @@
             var monthly = parseFloat(document.getElementById('calc-monthly').value) || 0;
             var months = parseFloat(document.getElementById('calc-months').value) || 0;
 
-            if (!(price > 0)) { errEl.textContent = 'Enter the vehicle purchase price.'; return; }
-            if (!(firstRepair >= 0)) { errEl.textContent = 'Enter the mileage at the first repair attempt (0 is allowed).'; return; }
-            if (firstRepair >= 120000) { errEl.textContent = 'The statutory formula only applies below 120,000 miles at the first repair attempt. Call to discuss your situation.'; return; }
-            if (!isNaN(current) && current < firstRepair) { errEl.textContent = 'Current mileage cannot be less than the mileage at the first repair attempt.'; return; }
+            if (!(price > 0)) { fail('Enter the vehicle purchase price.'); return; }
+            if (!(firstRepair >= 0)) { fail('Enter the mileage at the first repair attempt (0 is allowed).'); return; }
+            if (firstRepair >= 120000) { fail('The statutory formula only applies below 120,000 miles at the first repair attempt. Call to discuss your situation.'); return; }
+            if (!isNaN(current) && current < firstRepair) { fail('Current mileage cannot be less than the mileage at the first repair attempt.'); return; }
 
             var offset = (firstRepair / 120000) * price;
             var paid = down + (monthly * months);
