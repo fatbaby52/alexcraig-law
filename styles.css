@@ -1308,3 +1308,16 @@ textarea[aria-invalid="true"] {
         order: 0;
     }
 }
+
+/* Two-column rows inside the full intake form (matches mini-intake behavior) */
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1rem;
+}
+
+@media (max-width: 600px) {
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
