@@ -37,7 +37,7 @@ Suggested schedule: first week of January, April, July, October. Calendar remind
 
 Update affected pages within days when any of these happens:
 
-1. **DCA opt-in list changes.** A manufacturer joins or drops off the list. Affects: `/lemon-law/ab-1755/manufacturer-opt-in-list/` first, then the AB 1755 hub, pillar, and any manufacturer page (Phase 2). The ACP republishes the list by December 15 each year; check it that week every year, and after any industry news about a manufacturer's election.
+1. **DCA opt-in list changes.** (Automated: a monthly scheduled task, dca-lemon-law-optin-watch, diffs the DCA API against dca-optin-baseline.json in the repo root and alerts on any change.) A manufacturer joins or drops off the list. Affects: `/lemon-law/ab-1755/manufacturer-opt-in-list/` first, then the AB 1755 hub, pillar, and any manufacturer page (Phase 2). The ACP republishes the list by December 15 each year; check it that week every year, and after any industry news about a manufacturer's election.
 2. **Statutory amendments.** Any bill amending Civ. Code §§ 1790-1795.8 or CCP §§ 871.20-871.30. Watch the legislative session (bills signed September/October, effective January 1). Affects: potentially every page.
 3. **Significant appellate decisions.** Published California Court of Appeal or Supreme Court decisions interpreting Song-Beverly or the AB 1755 procedures (the *Rodriguez v. FCA* used-car rule is the model: one case changed the answer to a top FAQ). Affects: pillar, FAQ, and whichever cluster page covers the issue.
 4. **DCA procedural changes.** Changes to the opt-in webform, the standardized release template, or ACP guidance.
