@@ -14,7 +14,7 @@ Use this file to re-verify: each entry lists the load-bearing legal and factual 
 
 - Song-Beverly Consumer Warranty Act cited as Civ. Code §§ 1790-1795.8; refund-or-replace remedy at buyer's choice under § 1793.2(d)(2)
 - "Reasonable number" of repair attempts has no fixed count; two attempts can suffice for a serious safety defect
-- Tanner presumption (§ 1793.22): within 18 months / 18,000 miles; 2+ attempts for a defect likely to cause death or serious bodily injury; 4+ attempts for the same nonconformity; 30+ cumulative days out of service. Presumption shifts the burden; not a prerequisite to a claim.
+- Tanner presumption (§ 1793.22): within 18 months / 18,000 miles; 2+ attempts for a defect likely to cause death or serious bodily injury; 4+ attempts for the same nonconformity; out of service for a cumulative total of more than 30 calendar days. Presumption shifts the burden; not a prerequisite to a claim.
 - Mileage offset formula: (miles at first repair attempt ÷ 120,000) × price paid, § 1793.2(d)(2)(C)
 - Civil penalty up to 2x actual damages for willful violations (§ 1794(c)); "willful does not require malice"
 - Fee-shifting: manufacturer pays a prevailing consumer's reasonable attorney fees and costs (§ 1794(d))
@@ -134,3 +134,40 @@ Also note: two edits made during pre-approval review and included in the approva
 - Statutes: https://leginfo.legislature.ca.gov (Civ. Code 1790-1795.8; CCP 871.20-871.30)
 - DCA opt-in list: https://www.dca.ca.gov/acp/accepted_manufacturers.shtml (JSON: /acp/webapplications/api/getSB26Accepted)
 - Refresh cadence and update triggers: CONTENT-MAINTENANCE.md (quarterly; next review first week of October 2026)
+
+---
+
+## Amendments: July 6, 2026 (post-launch outside legal review)
+
+A second attorney review of this record produced precision corrections, applied to the live pages the same day. Where an entry above conflicts with this list, this list controls. Overall reviewer verdict: nothing fatal; "approved subject to maintenance edits," now applied.
+
+**Statutory precision (sitewide):**
+1. Tanner 30-day prong reworded everywhere from "30+ / more than 30 cumulative days" to "a cumulative total of more than 30 calendar days" (20 files).
+2. Pillar Tanner section now notes that some presumption requirements (e.g., direct manufacturer notice) apply only if clearly disclosed in the warranty/owner's manual.
+
+**Pre-suit notice page (largest cleanup):**
+3. Delivery methods corrected: email to the address the manufacturer prominently displays on its website for this purpose, OR certified/registered mail, return receipt requested, to the manual/warranty-booklet address. (Old phrasing "certified mail or email per the owner's manual" was imprecise.)
+4. Operative date added: notice provisions operative July 1, 2025 (not April 1).
+5. "Defective notice forfeits penalties" softened everywhere (pillar, notice page, FAQ Q13 text + schema): filing without a compliant notice generally means no civil penalties on the opted-in track, but the statute says minor deviations do not disqualify the consumer, and suit may proceed without notice where penalties are not sought.
+6. Added possession/resale trap: penalties tied to continued ownership/possession; selling after notice carries additional notice obligations.
+
+**Other statutory mechanics:**
+7. Deadlines page: new tolling section per CCP sec. 871.21 (out-of-service repair time, Tanner-certified arbitration, up to 60 days after pre-suit notice).
+8. Mediation page: "pre-mediation vehicle inspection" reframed as common practice arranged by agreement, not a statutory AB 1755 step (not found in sec. 871.26).
+9. AB 1755 hub: added that an election is not a permanent blanket status; procedures can depend on the manufacturer's status for the period covering the vehicle's sale.
+10. Calculator: now states it estimates the BASE statutory mileage offset only; CCP sec. 871.27 restitution adjustments for opted-in manufacturers (third-party add-ons, negative equity, manufacturer rebates, lease residual/extension rules) are called out in the disclaimer and the "what it leaves out" section.
+
+**Manufacturer-page factual refreshes:**
+11. GM (hub + shudder page): class litigation timing corrected to "certified in 2024, decertified by the Sixth Circuit in June 2025" (was "certified 2023").
+12. Toyota: V35A recall updated and verified against NHTSA reporting: May 2024 recall 24V-381 (~102k, 2022-2023 Tundra/LX600, engine replacement) expanded November 2025 by 25V-767 (~127k more; 2022-2024 Tundra, 2024 LX600, 2024 GX550; inspect-then-replace remedy). Display/rear-camera recall follow-ons noted.
+13. Tesla hub: NHTSA phantom-braking closure (July 2026) now framed as ending the federal inquiry without deciding whether any particular vehicle is defective (ADAS page already had this framing).
+14. Stellantis infotainment: recall population figures qualified as U.S. figures.
+
+**Venue and intake:**
+15. Monterey County: Salinas courthouse description softened (handles broad court business including filings; civil cases generally heard at the Monterey courthouse; confirm current assignments when filing).
+16. Intake form: days-out-of-service bucket relabeled "More than 30 days" to match the statutory threshold.
+
+**Reviewer items noted but deliberately not acted on:**
+- Ford page: no change needed; "commonly reported" hedges stay.
+- Stellantis page: adding Jeep 4xe fire/park-outside recall content flagged as an optional future enhancement for the quarterly refresh.
+- Intake "direct response from Alex" promise: fine while operationally true; revisit if intake volume changes.
