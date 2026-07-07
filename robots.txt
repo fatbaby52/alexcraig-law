@@ -5,6 +5,9 @@ Allow: /
 # Disallow admin and private pages
 Disallow: /thank-you.html
 Disallow: /CLAUDE.md
+Disallow: /CONTENT-MAINTENANCE.md
+Disallow: /TRACKING-PLAN.md
+Disallow: /LOCAL-SEO-CHECKLIST.md
 
 # AI / LLM crawlers (explicitly welcome)
 User-agent: GPTBot

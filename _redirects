@@ -4,3 +4,6 @@
 
 # Block internal project notes from being served (! forces the rule over the static file)
 /CLAUDE.md /404.html 404!
+/CONTENT-MAINTENANCE.md /404.html 404!
+/TRACKING-PLAN.md /404.html 404!
+/LOCAL-SEO-CHECKLIST.md /404.html 404!

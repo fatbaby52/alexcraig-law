@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Name validation
             const nameInput = this.querySelector('#name');
-            if (!nameInput.value.trim()) {
+            if (nameInput && !nameInput.value.trim()) {
                 showError(nameInput, 'Please enter your full name.');
                 isValid = false;
                 firstErrorField = firstErrorField || nameInput;
@@ -141,9 +141,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Phone validation
             const phoneInput = this.querySelector('#phone');
-            const phoneValue = phoneInput.value.trim();
+            const phoneValue = phoneInput ? phoneInput.value.trim() : 'skip';
             const phoneRegex = /^[\d\s\-\(\)\.+]+$/;
-            if (!phoneValue) {
+            if (!phoneInput) {
+                // no phone field on this form
+            } else if (!phoneValue) {
                 showError(phoneInput, 'Please enter your phone number.');
                 isValid = false;
                 firstErrorField = firstErrorField || phoneInput;
@@ -155,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Email validation (if provided)
             const emailInput = this.querySelector('#email');
-            const emailValue = emailInput.value.trim();
+            const emailValue = emailInput ? emailInput.value.trim() : '';
             if (emailValue) {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(emailValue)) {
@@ -167,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Case type validation
             const caseTypeSelect = this.querySelector('#case-type');
-            if (!caseTypeSelect.value) {
+            if (caseTypeSelect && !caseTypeSelect.value) {
                 showError(caseTypeSelect, 'Please select a case type.');
                 isValid = false;
                 firstErrorField = firstErrorField || caseTypeSelect;
@@ -215,40 +217,42 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Structured Data for FAQ (can be expanded)
-const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What areas does Alex Craig Law serve?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Alex Craig Law serves California's Central Coast and Central Valley, including Monterey County, San Benito County, Santa Cruz County, Stanislaus County, Merced County, and surrounding areas."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What types of cases does Alex Craig handle?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Alex Craig handles estate planning (wills, trusts, probate), immigration law (family-based immigration, green cards, citizenship), criminal defense (DUI, drug crimes, theft), and personal injury cases (car accidents, slip and falls)."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Does Alex Craig offer free consultations?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, Alex Craig Law offers free initial consultations. Contact the office at (209) 470-6385 to schedule your consultation."
-            }
+// GA4 event tracking: phone clicks and form submissions
+document.addEventListener('DOMContentLoaded', function() {
+    function track(eventName, params) {
+        if (typeof gtag === 'function') {
+            gtag('event', eventName, params || {});
         }
-    ]
-};
+    }
 
-// Add FAQ schema to page
-const faqScript = document.createElement('script');
-faqScript.type = 'application/ld+json';
-faqScript.textContent = JSON.stringify(faqSchema);
-document.head.appendChild(faqScript);
+    // Stamp source page into intake forms
+    document.querySelectorAll('form input[name="page"]').forEach(field => {
+        if (!field.value) {
+            field.value = window.location.pathname;
+        }
+    });
+
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+        link.addEventListener('click', () => {
+            track('phone_click', { link_location: window.location.pathname });
+        });
+    });
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+        link.addEventListener('click', () => {
+            track('email_click', { link_location: window.location.pathname });
+        });
+    });
+
+    document.querySelectorAll('form[data-netlify="true"]').forEach(form => {
+        form.addEventListener('submit', () => {
+            // Fires only when inline validation allows submission to proceed
+            if (form.checkValidity && !form.querySelector('.form-group.error')) {
+                track('generate_lead', {
+                    form_name: form.getAttribute('name') || 'contact',
+                    link_location: window.location.pathname
+                });
+            }
+        });
+    });
+});

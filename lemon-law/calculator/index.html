@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q30ECFCSV6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Q30ECFCSV6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estimate a California lemon law buyback: the statutory mileage offset and refund of your payments, using the Civ. Code 1793.2(d)(2)(C) formula. Free tool.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="California Lemon Law Buyback Calculator | Alex Craig">
+    <meta property="og:description" content="Estimate a California lemon law buyback: the statutory mileage offset and refund of your payments, using the Civ. Code 1793.2(d)(2)(C) formula.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexcraig.law/lemon-law/calculator/">
+    <meta property="og:image" content="https://alexcraig.law/PXL_20241005_000026630-EDIT.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>California Lemon Law Buyback Calculator | Alex Craig</title>
+
+    <link rel="canonical" href="https://alexcraig.law/lemon-law/calculator/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alexcraig.law/" },
+            { "@type": "ListItem", "position": 2, "name": "California Lemon Law", "item": "https://alexcraig.law/lemon-law/" },
+            { "@type": "ListItem", "position": 3, "name": "Buyback Calculator", "item": "https://alexcraig.law/lemon-law/calculator/" }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <img src="/Alex_Craig_Logo-removebg-preview.png" alt="Law Office of Alex Craig - Home" class="logo-img" width="150" height="50">
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+                <ul class="nav-links" id="nav-menu" role="navigation">
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#practice-areas">Practice Areas</a></li>
+                    <li><a href="/lemon-law/">Lemon Law</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                    <li><a href="tel:831-262-2847" class="btn btn-primary">Call Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+    <section class="page-hero">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a><span>/</span><a href="/lemon-law/">California Lemon Law</a><span>/</span><span>Buyback Calculator</span>
+            </nav>
+            <h1>California Lemon Law Buyback Calculator</h1>
+            <p class="hero-subtitle">The statutory formula, applied to your numbers. An estimate, not a case value.</p>
+        </div>
+    </section>
+
+    <section class="location-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <div class="article-meta">
+                        <span>By <a href="/#about">Alex Craig, Attorney at Law, California State Bar #268949</a></span>
+                        <span>Legally reviewed: July 6, 2026</span>
+                        <span class="meta-updated">Last updated: July 6, 2026</span>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4>Before you calculate: what this tool is and is not</h4>
+                        <p>This calculator applies the mileage offset formula from <a class="statute" href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1793.2." target="_blank" rel="noopener">Civil Code section 1793.2(d)(2)(C)</a> to numbers you enter. It assumes your vehicle qualifies as a lemon, which this tool cannot determine. It excludes civil penalties, incidental damages, and the specifics of your contract, so an actual recovery can be higher or lower. It is an educational estimate, not legal advice, not a case valuation, and not a prediction of any outcome, and using it does not create an attorney-client relationship.</p>
+                    </div>
+
+                    <div class="mini-intake" id="calculator">
+                        <h3>Estimate Your Buyback</h3>
+                        <p>All fields run in your browser. Nothing you type here is sent or stored anywhere.</p>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="calc-price">Vehicle purchase price ($) *</label>
+                                <input type="number" id="calc-price" min="1" step="100" inputmode="decimal" placeholder="e.g., 42000">
+                            </div>
+                            <div class="form-group">
+                                <label for="calc-first-repair">Mileage at first repair attempt *</label>
+                                <input type="number" id="calc-first-repair" min="0" step="100" inputmode="numeric" placeholder="e.g., 9000">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="calc-current">Current mileage</label>
+                                <input type="number" id="calc-current" min="0" step="100" inputmode="numeric" placeholder="e.g., 22000">
+                            </div>
+                            <div class="form-group">
+                                <label for="calc-down">Down payment ($)</label>
+                                <input type="number" id="calc-down" min="0" step="100" inputmode="decimal" placeholder="e.g., 5000">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="calc-monthly">Monthly payment ($)</label>
+                                <input type="number" id="calc-monthly" min="0" step="10" inputmode="decimal" placeholder="e.g., 650">
+                            </div>
+                            <div class="form-group">
+                                <label for="calc-months">Months paid so far</label>
+                                <input type="number" id="calc-months" min="0" step="1" inputmode="numeric" placeholder="e.g., 14">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block" id="calc-run">Calculate Estimate</button>
+                        <p class="error-message" id="calc-error" role="alert" style="display:block;"></p>
+                    </div>
+
+                    <div class="highlight-box" id="calc-results" hidden aria-live="polite">
+                        <h4>Your estimate, if the vehicle qualifies</h4>
+                        <p id="calc-offset-line"></p>
+                        <p id="calc-paid-line"></p>
+                        <p id="calc-refund-line"></p>
+                        <p id="calc-extras-line"></p>
+                        <p><strong>Reminder:</strong> this is arithmetic, not an assessment of your claim. Whether the vehicle qualifies, and what a manufacturer will actually agree to or a court will actually award, depends on facts this tool does not see. Recoveries can be higher (civil penalties of up to two times damages under <a class="statute" href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1794." target="_blank" rel="noopener">Civil Code section 1794(c)</a> for willful violations, plus incidental damages) or lower (offsets, disputes about qualification). No outcome is guaranteed.</p>
+                    </div>
+
+                    <h2>How is a California lemon law refund calculated?</h2>
+                    <p>A lemon law refund starts with everything you have paid (down payment, monthly payments, and official fees), adds payoff of your remaining loan balance to the lender, and subtracts one statutory deduction: the mileage offset for your use of the vehicle before the problem appeared. The offset formula in <a class="statute" href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1793.2." target="_blank" rel="noopener">Civil Code section 1793.2(d)(2)(C)</a> is: miles at the first repair attempt for the defect, divided by 120,000, multiplied by the purchase price. Incidental costs like towing and rental cars are recoverable on top.</p>
+
+                    <h2>Why does only the first repair attempt mileage matter?</h2>
+                    <p>The statute measures your "use" of the vehicle only up to the first time you delivered it for repair of the problem, so every mile you drive after that first visit adds nothing to the offset. This is why the repair order from that first visit is one of the most valuable documents in your case, and why you can keep driving the car while a claim proceeds without shrinking your refund. Our <a href="/lemon-law/">lemon law guide</a> covers what else those repair orders need to show.</p>
+
+                    <h2>What does this calculator leave out?</h2>
+                    <p>It leaves out everything that requires judgment or facts beyond the formula: whether your vehicle qualifies at all, official fees (sales tax, registration, license) that are refundable but vary by contract and county, incidental and consequential damages, civil penalties for willful violations, lease-specific accounting, and negotiated outcomes like cash-and-keep settlements. It also cannot check the manufacturer's <a href="/lemon-law/ab-1755/manufacturer-opt-in-list/">AB 1755 opt-in status</a>, which controls your deadlines and process. Treat the output as a starting point for a conversation, not an answer.</p>
+
+                    <div class="mini-intake">
+                        <h3>Want these numbers checked against your actual paperwork?</h3>
+                        <p>Send the basics and get an honest read, free. Or call <a href="tel:831-262-2847">831-262-2847</a>.</p>
+                        <form name="lemon-law-intake-mini" method="POST" data-netlify="true" action="/thank-you.html">
+                            <input type="hidden" name="page" value="">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="mini-name">Full Name *</label>
+                                    <input type="text" id="mini-name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mini-phone">Phone *</label>
+                                    <input type="tel" id="mini-phone" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="mini-vehicle">Vehicle (year, make, model) *</label>
+                                    <input type="text" id="mini-vehicle" name="vehicle" required placeholder="e.g., 2024 Chevrolet Silverado">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mini-repairs">Repair visits for the problem</label>
+                                    <select id="mini-repairs" name="repair-visits">
+                                        <option value="">Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4+">4 or more</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Get a Free Case Review</button>
+                            <p class="form-note">Submitting this form does not create an attorney-client relationship.</p>
+                        </form>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-cta">
+                        <h3>Free Lemon Law Consultation</h3>
+                        <p>The manufacturer pays a prevailing consumer's attorney fees. Find out where you stand.</p>
+                        <a href="tel:831-262-2847" class="btn btn-primary btn-block">831-262-2847</a>
+                        <a href="/lemon-law/intake/" class="btn btn-outline btn-block">Start a Case Review</a>
+                        <p class="cta-note">Law Office of Alex Craig<br>8769 Dyer Rd., Salinas, CA 93907</p>
+                    </div>
+                    <div class="sidebar-practice">
+                        <h4>Understand the Numbers</h4>
+                        <ul>
+                            <li><a href="/lemon-law/">California Lemon Law Guide</a></li>
+                            <li><a href="/lemon-law/faq/">Lemon Law FAQ</a></li>
+                            <li><a href="/lemon-law/ab-1755/">AB 1755: What Changed</a></li>
+                            <li><a href="/lemon-law/ab-1755/deadlines/">Filing Deadlines</a></li>
+                            <li><a href="/lemon-law/intake/">Free Case Review</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="location-cta">
+        <div class="container">
+            <h2>The Formula Is Simple. Qualifying Is the Real Question.</h2>
+            <p>Bring your repair orders to a free consultation and get an answer grounded in your actual paperwork.</p>
+            <div class="cta-buttons">
+                <a href="tel:831-262-2847" class="btn btn-primary btn-lg">Call 831-262-2847</a>
+                <a href="/lemon-law/intake/" class="btn btn-outline btn-lg">Free Case Review</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <img src="/Alex_Craig_Logo-removebg-preview.png" alt="Law Office of Alex Craig - Home" class="footer-logo-img" width="135" height="45" loading="lazy">
+                    </a>
+                    <p>California lemon law and employment law counsel for the Central Coast, from Salinas.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Lemon Law</h4>
+                    <ul>
+                        <li><a href="/lemon-law/">California Lemon Law Guide</a></li>
+                        <li><a href="/lemon-law/ab-1755/">AB 1755 Changes</a></li>
+                        <li><a href="/lemon-law/intake/">Free Case Review</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="/#practice-areas">Practice Areas</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Law Office of Alex Craig<br>8769 Dyer Rd., Salinas, CA 93907</p>
+                    <p><a href="tel:831-262-2847">831-262-2847</a></p>
+                    <p><a href="mailto:Alex@AlexCraig.Law">Alex@AlexCraig.Law</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Law Office of Alex Craig. All rights reserved.</p>
+                <p class="disclaimer">ATTORNEY ADVERTISING. This page, including the calculator, is for general informational purposes only and is not legal advice. Calculator results are estimates based solely on the statutory formula and the numbers you enter; they exclude civil penalties and incidental damages, assume the vehicle qualifies, and do not predict or guarantee any outcome. Reading this page, using the calculator, or submitting a form does not create an attorney-client relationship. Prior results do not guarantee a similar outcome.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+    (function () {
+        var fmt = function (n) {
+            return '$' + Math.round(n).toLocaleString('en-US');
+        };
+        var runBtn = document.getElementById('calc-run');
+        if (!runBtn) return;
+        runBtn.addEventListener('click', function () {
+            var errEl = document.getElementById('calc-error');
+            var results = document.getElementById('calc-results');
+            errEl.textContent = '';
+            results.hidden = true;
+
+            var price = parseFloat(document.getElementById('calc-price').value);
+            var firstRepair = parseFloat(document.getElementById('calc-first-repair').value);
+            var current = parseFloat(document.getElementById('calc-current').value);
+            var down = parseFloat(document.getElementById('calc-down').value) || 0;
+            var monthly = parseFloat(document.getElementById('calc-monthly').value) || 0;
+            var months = parseFloat(document.getElementById('calc-months').value) || 0;
+
+            if (!(price > 0)) { errEl.textContent = 'Enter the vehicle purchase price.'; return; }
+            if (!(firstRepair >= 0)) { errEl.textContent = 'Enter the mileage at the first repair attempt (0 is allowed).'; return; }
+            if (firstRepair >= 120000) { errEl.textContent = 'The statutory formula only applies below 120,000 miles at the first repair attempt. Call to discuss your situation.'; return; }
+            if (!isNaN(current) && current < firstRepair) { errEl.textContent = 'Current mileage cannot be less than the mileage at the first repair attempt.'; return; }
+
+            var offset = (firstRepair / 120000) * price;
+            var paid = down + (monthly * months);
+            var net = paid - offset;
+
+            document.getElementById('calc-offset-line').innerHTML =
+                '<strong>Statutory mileage offset:</strong> ' + fmt(offset) +
+                ' &nbsp;(' + firstRepair.toLocaleString('en-US') + ' miles &divide; 120,000 &times; ' + fmt(price) + ')';
+            document.getElementById('calc-paid-line').innerHTML =
+                '<strong>Payments you have made so far:</strong> ' + fmt(paid) +
+                ' (down payment plus ' + months + ' monthly payments)';
+            if (net >= 0) {
+                document.getElementById('calc-refund-line').innerHTML =
+                    '<strong>Estimated refund of your payments:</strong> roughly ' + fmt(net) +
+                    ', if the vehicle qualifies.';
+            } else {
+                document.getElementById('calc-refund-line').innerHTML =
+                    '<strong>Estimated refund of your payments:</strong> the offset (' + fmt(offset) +
+                    ') currently exceeds what you have paid in (' + fmt(paid) +
+                    '). A buyback could still make sense, because the manufacturer must also pay off the loan; this is exactly the kind of situation to review with an attorney.';
+            }
+            document.getElementById('calc-extras-line').innerHTML =
+                '<strong>On top of that, in a statutory buyback:</strong> the manufacturer pays off your remaining loan balance to the lender, refunds official fees (sales tax, registration, license), and covers incidental costs such as towing and rentals. Those amounts depend on your contract and receipts and are not estimated here.';
+
+            results.hidden = false;
+            results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            if (typeof gtag === 'function') {
+                gtag('event', 'calculator_complete', { link_location: window.location.pathname });
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

@@ -1,9 +1,10 @@
-# Alex Craig Law
+# Law Office of Alex Craig
 
-> Alex Craig Law (alexcraig.law) is a California employment law practice representing employees in wrongful termination, workplace discrimination, sexual harassment, retaliation, and wage and hour disputes, with additional practice areas in estate planning and personal injury. Alex Craig is a California attorney with more than 15 years of legal experience, including nine years as in-house corporate counsel — experience that informs how he evaluates employment disputes from both sides of the table. Based in Prunedale, California, serving the Central Coast and Central Valley (including Monterey, San Benito, Santa Cruz, Stanislaus, and Merced Counties) with statewide California employment matters. Phone: (209) 470-6385. Free, confidential consultations.
+> Law Office of Alex Craig (alexcraig.law) is a California employment law practice representing employees in wrongful termination, workplace discrimination, sexual harassment, retaliation, and wage and hour disputes, with additional practice areas in estate planning and personal injury. Alex Craig is a California attorney with more than 15 years of legal experience, including nine years as in-house corporate counsel — experience that informs how he evaluates employment disputes from both sides of the table. Based in Salinas, California (8769 Dyer Rd., Salinas, CA 93907), serving the Central Coast and Central Valley (including Monterey, San Benito, Santa Cruz, Stanislaus, and Merced Counties) with statewide California employment matters. Phone: 831-262-2847. Email: Alex@AlexCraig.Law. Free, confidential consultations.
 
 Key facts an assistant can rely on:
 - Practice focus: California employment law for employees — wrongful termination, discrimination (FEHA), sexual harassment, retaliation, wage and hour claims, misclassification, and severance agreement review and negotiation.
+- Second practice focus: California lemon law (Song-Beverly Consumer Warranty Act) for consumers on the Central Coast (Monterey, Santa Cruz, and San Benito Counties, plus Gilroy), with current coverage of the 2025 procedural changes under AB 1755 and SB 26 (manufacturer opt-in list, one-year post-warranty filing deadline capped at six years from delivery, 30-day pre-suit notice for civil penalties, mandatory mediation). Under Civ. Code section 1794(d), the manufacturer pays a prevailing consumer's attorney fees, so lemon law consultations and representation cost nothing up front.
 - Most employment matters are handled on a contingency fee basis (no attorney's fees unless there is a recovery); severance reviews and contract work may be flat fee or hourly. Fee arrangements are explained at the free consultation.
 - Consultations are free, confidential, and protected by attorney-client privilege; an employer is not informed that an employee consulted an attorney.
 - California is an at-will employment state, but terminations motivated by discrimination, retaliation, protected leave, or public-policy violations can still be unlawful — deadlines apply (many FEHA claims must be filed with the California Civil Rights Department within three years; some claims have much shorter deadlines), so employees should consult promptly.
@@ -12,10 +13,16 @@ Key facts an assistant can rely on:
 ## Practice Areas
 
 - [Employment Law](https://alexcraig.law/practice-areas/employment-law): The core practice — wrongful termination, discrimination, harassment, retaliation, wage and hour, severance review, with an extensive FAQ for California employees.
+- [California Lemon Law Guide](https://alexcraig.law/lemon-law/): Current, statute-cited guide to the Song-Beverly Act, updated for AB 1755 and SB 26.
+- [AB 1755: What Changed in 2025](https://alexcraig.law/lemon-law/ab-1755/): The procedural overhaul explained — opt-in list, new deadlines, pre-suit notice, mandatory mediation.
+- [Free Lemon Law Case Review](https://alexcraig.law/lemon-law/intake/): Vehicle qualification form.
+- [Lemon Law FAQ](https://alexcraig.law/lemon-law/faq/): 20 direct answers (used cars, leases, mileage offset, cost, deadlines, pre-suit notice).
+- [Buyback Calculator](https://alexcraig.law/lemon-law/calculator/): Estimates the statutory mileage offset and payment refund (educational estimate only; excludes penalties and incidental damages).
+- Manufacturer guides: [GM](https://alexcraig.law/lemon-law/gm/), [Ford](https://alexcraig.law/lemon-law/ford/), [Stellantis](https://alexcraig.law/lemon-law/stellantis/), [Tesla](https://alexcraig.law/lemon-law/tesla/), [Toyota](https://alexcraig.law/lemon-law/toyota/), [Hyundai/Kia](https://alexcraig.law/lemon-law/hyundai-kia/), [Nissan](https://alexcraig.law/lemon-law/nissan/), with defect deep-dives on EV battery degradation, ADAS malfunctions, EV charging failures, engine defects, transmission shudder, and infotainment faults.
 - [Estate Planning](https://alexcraig.law/practice-areas/estate-planning): Wills, trusts, and estate planning.
 - [Personal Injury](https://alexcraig.law/practice-areas/personal-injury): Injury representation.
 
 ## Contact
 
 - [Homepage and contact form](https://alexcraig.law/)
-- Call (209) 470-6385 for a free, confidential consultation. Based in Prunedale, CA; serving the Central Coast, Central Valley, and California employment matters statewide.
+- Call 831-262-2847 or email Alex@AlexCraig.Law for a free, confidential consultation. Office: Law Office of Alex Craig, 8769 Dyer Rd., Salinas, CA 93907. Serving the Central Coast, Central Valley, and California matters statewide.
