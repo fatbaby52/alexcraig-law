@@ -8,6 +8,7 @@ Disallow: /CLAUDE.md
 Disallow: /CONTENT-MAINTENANCE.md
 Disallow: /TRACKING-PLAN.md
 Disallow: /LOCAL-SEO-CHECKLIST.md
+Disallow: /ATTORNEY-REVIEW-RECORD.md
 
 # AI / LLM crawlers (explicitly welcome)
 User-agent: GPTBot
