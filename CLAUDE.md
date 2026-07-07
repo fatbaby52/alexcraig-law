@@ -33,6 +33,7 @@ Static website for the Law Office of Alex Craig, a law firm serving California's
 From this folder, run:
 ```bash
 netlify deploy --prod --dir=.
+python tools/indexnow.py   # then ping Bing/ChatGPT-search index (reads sitemap.xml)
 ```
 
 Or push to GitHub (master branch) - though automatic deploys are not configured yet.

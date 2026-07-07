@@ -53,6 +53,12 @@ Primary target first; secondary targets after. Track weekly for the first 90 day
 
 Note: `calculator_complete` GA4 event is now live on /lemon-law/calculator/ (fires on each completed estimate); mark it as a key event alongside generate_lead and phone_click.
 
+## AI traffic: indexing and monitoring
+
+**IndexNow (push indexing for Bing / ChatGPT search / Copilot):** after every production deploy, run `python tools/indexnow.py` from the repo root. It reads sitemap.xml and pings api.indexnow.org so Bing's index (which ChatGPT search and Copilot draw from) picks up changes within hours instead of weeks. The verification key file lives in the site root; do not delete the `.txt` key file or `.indexnow-key`.
+
+**Monitoring AI referrals in GA4:** AI assistants that send visitors show up as ordinary referral traffic. Monthly, open Reports > Acquisition > Traffic acquisition and filter "Session source" for: `chatgpt.com`, `perplexity.ai`, `copilot.microsoft.com`, `gemini.google.com`, `claude.ai`, `you.com`. Watch two things: (1) which of these grow over time, and (2) which landing pages they hit (Engagement > Landing page, same source filter). AI-referred visitors typically arrive deep on a specific answer page, so a defect page or FAQ receiving chatgpt.com referrals is direct evidence the citation strategy is working. Note: some AI tools send no referrer at all, so this undercounts; treat it as a floor, not a total.
+
 ## Measurement rhythm
 
 - Weekly (5 min): GA4 > Reports > check `generate_lead` and `phone_click` counts; Netlify forms inbox zero
