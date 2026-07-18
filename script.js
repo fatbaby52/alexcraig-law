@@ -48,18 +48,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Header scroll effect
+    // Header scroll effect (class-driven so CSS owns the visual)
     const header = document.querySelector('.header');
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 100) {
-            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
-        } else {
-            header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+        if (header) {
+            header.classList.toggle('is-scrolled', currentScroll > 60);
         }
-    });
+    }, { passive: true });
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -188,33 +185,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Animate elements on scroll (respects reduced motion)
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (!prefersReducedMotion) {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.practice-card, .feature-card, .area-group').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    }
+    // Scroll-linked reveals now live in the motion system below
+    // (JS-additive: hidden states exist only under html.motion).
 });
 
 // GA4 event tracking: phone clicks and form submissions
@@ -255,4 +227,152 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+
+// ============================================================
+// Motion system (2026 redesign) — additive and JS-gated.
+// Reveal-hidden states exist only under html.js / html.motion,
+// so with JavaScript disabled (or if this file fails to load)
+// every element on the page stays fully visible. Transform and
+// opacity only; scroll work is rAF-throttled with passive
+// listeners; parallax is desktop-only and clamped.
+// ============================================================
+document.addEventListener('DOMContentLoaded', function () {
+    const docEl = document.documentElement;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasIO = 'IntersectionObserver' in window;
+
+    // Safety: if the inline head bootstrap did not run, add .js here
+    docEl.classList.add('js');
+
+    // --- Entrance choreography: wait for fonts, never more than 600ms ---
+    let loaded = false;
+    const markLoaded = () => {
+        if (loaded) return;
+        loaded = true;
+        docEl.classList.add('is-loaded');
+    };
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(markLoaded, markLoaded);
+        setTimeout(markLoaded, 600);
+    } else {
+        setTimeout(markLoaded, 80);
+    }
+
+    // --- Trust counters: quiet tick-up, reading the value already in the markup ---
+    function startCounter(el) {
+        if (el.dataset.counted) return;
+        el.dataset.counted = '1';
+        const match = /^(\d+)(\+?)$/.exec(el.textContent.trim());
+        if (!match) return; // "Free" and friends stay as-is
+        const target = parseInt(match[1], 10);
+        const suffix = match[2] || '';
+        const dur = 1400;
+        let t0 = null;
+        function frame(now) {
+            if (!t0) t0 = now;
+            const p = Math.min((now - t0) / dur, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(eased * target) + suffix;
+            if (p < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+    }
+
+    // --- Scroll-linked reveals ---
+    if (reduced || !hasIO) {
+        // No scroll motion: html.motion is never added, so nothing is
+        // hidden. Mark everything .is-in for any state-dependent styling.
+        document.querySelectorAll('[data-observe], [data-reveal], [data-step]').forEach(el => {
+            el.classList.add('is-in');
+        });
+    } else {
+        // Arm scroll-reveal styling only now that we know we can reveal.
+        docEl.classList.add('motion');
+
+        // Quiet auto-reveals on interior pages: tag common components so
+        // no per-page markup is required. Because the .rv class (and its
+        // hidden state) is added here, a JS-less visit never hides them.
+        const autoSelectors = [
+            '.reason-card',
+            '.area-group',
+            '.highlight-box',
+            '.mini-intake',
+            '.table-wrap',
+            '.sidebar > div',
+            '.contact-form-wrapper',
+            '.location-cta h2',
+            '.location-cta p',
+            '.location-cta .cta-buttons'
+        ].join(', ');
+        document.querySelectorAll(autoSelectors).forEach(el => {
+            if (el.hasAttribute('data-reveal') || el.hasAttribute('data-observe') || el.hasAttribute('data-step')) return;
+            el.classList.add('rv');
+            // Stagger siblings that reveal together (100-130ms beats, capped)
+            let i = 0;
+            let sib = el.previousElementSibling;
+            while (sib) {
+                if (sib.classList.contains('rv')) i++;
+                sib = sib.previousElementSibling;
+            }
+            if (i > 0) el.style.transitionDelay = Math.min(i, 4) * 110 + 'ms';
+        });
+
+        const observed = document.querySelectorAll('[data-observe], [data-reveal], [data-step], .rv');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                el.classList.add('is-in');
+                el.querySelectorAll('.trust-number').forEach(startCounter);
+                io.unobserve(el);
+                // Release any stagger delay so hover transitions stay snappy
+                if (el.style.transitionDelay) {
+                    setTimeout(() => { el.style.transitionDelay = ''; }, 1600);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '-40px 0px' });
+
+        observed.forEach(el => {
+            // Anything already scrolled past (e.g. anchor deep-links)
+            // reveals immediately rather than waiting to re-enter view.
+            if (el.getBoundingClientRect().bottom < 0) {
+                el.classList.add('is-in');
+                el.querySelectorAll('.trust-number').forEach(startCounter);
+                el.style.transitionDelay = '';
+            } else {
+                io.observe(el);
+            }
+        });
+    }
+
+    // --- Hero ghost drift + portrait parallax (desktop only, clamped) ---
+    const ghost = document.querySelector('.hero-ghost');
+    const para = document.querySelector('[data-parallax]');
+    if (!reduced && (ghost || para)) {
+        let ticking = false;
+        const update = () => {
+            ticking = false;
+            if (window.innerWidth <= 992) {
+                if (ghost) ghost.style.transform = '';
+                if (para) para.style.setProperty('--para', 0);
+                return;
+            }
+            const y = window.pageYOffset;
+            if (ghost) ghost.style.transform = 'translateY(' + (y * 0.07).toFixed(1) + 'px)';
+            if (para) {
+                const rect = para.getBoundingClientRect();
+                const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+                const drift = Math.max(-36, Math.min(36, center * 0.055));
+                para.style.setProperty('--para', drift.toFixed(2));
+            }
+        };
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                ticking = true;
+                requestAnimationFrame(update);
+            }
+        }, { passive: true });
+        update();
+    }
 });
